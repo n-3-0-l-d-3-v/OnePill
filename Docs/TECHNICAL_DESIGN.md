@@ -116,3 +116,9 @@ feel open and exploratory. Every second intentional — quality over quantity.
   (wire this to an interact input in the level) notifies the Director that post-pill rules
   may activate and broadcasts `OnSwallowed` once, permanently. `Director` component is now
   also attached to `AOnePillCharacter`.
+- **2026-08-09**: `UDeviceLockSubsystem` v1 added — writes a marker file outside normal
+  SaveGame slots once `LockDevicePermanently()` is called; checked on startup to gate whether
+  the Pre-Pill sequence is even allowed to begin. **Open design question, not yet decided**:
+  this v1 is a plain marker file, defeatable by a user who manually deletes app data / reinstalls.
+  Need a decision on how far to harden this (e.g. tie to a signed platform save/achievement,
+  cloud-backed check) before treating the lock as truly final — tracked as a risk in §8.
