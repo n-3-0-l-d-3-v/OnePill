@@ -98,3 +98,12 @@ feel open and exploratory. Every second intentional — quality over quantity.
 
 - **2026-08-09**: Repository created (`OnePill`, public). Initial skeleton: README, this
   document, `.gitignore`, folder structure. No code yet.
+- **2026-08-09**: UE5 project skeleton added (`OnePill.uproject`, build targets, empty
+  `OnePill` runtime module).
+- **2026-08-09**: `AOnePillGameMode` and `AOnePillCharacter` added — Pre-Pill first-person
+  character with Enhanced Input move/look. Requires an `UInputMappingContext` and two
+  `UInputAction` assets (Move, Look) authored in-editor and assigned on the character's
+  Blueprint defaults (or a BP subclass) before it's playable.
+- **2026-08-09**: `UPlayerSignalComponent` added and attached to `AOnePillCharacter` — first
+  Living-System hook. Tracks gaze direction, normalized movement speed, and stillness
+  duration each tick; purely observational, feeds the future Director/Audio systems.
