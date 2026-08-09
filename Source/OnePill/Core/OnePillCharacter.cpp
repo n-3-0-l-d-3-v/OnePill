@@ -3,6 +3,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Signals/PlayerSignalComponent.h"
 
 AOnePillCharacter::AOnePillCharacter()
 {
@@ -17,6 +18,8 @@ AOnePillCharacter::AOnePillCharacter()
 	FirstPersonCamera->SetupAttachment(GetCapsuleComponent());
 	FirstPersonCamera->SetRelativeLocation(FVector(0.f, 0.f, 64.f));
 	FirstPersonCamera->bUsePawnControlRotation = true;
+
+	PlayerSignals = CreateDefaultSubobject<UPlayerSignalComponent>(TEXT("PlayerSignals"));
 }
 
 void AOnePillCharacter::BeginPlay()
