@@ -107,3 +107,12 @@ feel open and exploratory. Every second intentional — quality over quantity.
 - **2026-08-09**: `UPlayerSignalComponent` added and attached to `AOnePillCharacter` — first
   Living-System hook. Tracks gaze direction, normalized movement speed, and stillness
   duration each tick; purely observational, feeds the future Director/Audio systems.
+- **2026-08-09**: Living Rule Graph stub added — `ULivingRuleAsset` (data-driven rule:
+  signal name, threshold, behavior tag, post-pill-only flag) and `UDirectorComponent`
+  (evaluates rules against `UPlayerSignalComponent` each tick, broadcasts
+  `OnLivingRuleActivated` for world actors to subscribe to). No rule assets authored yet —
+  needs at least one `ULivingRuleAsset` created in-editor to see anything happen.
+- **2026-08-09**: `ASwallowTrigger` added — the point-of-no-return actor. Calling `Swallow()`
+  (wire this to an interact input in the level) notifies the Director that post-pill rules
+  may activate and broadcasts `OnSwallowed` once, permanently. `Director` component is now
+  also attached to `AOnePillCharacter`.
