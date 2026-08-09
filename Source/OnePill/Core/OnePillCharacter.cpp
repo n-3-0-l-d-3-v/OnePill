@@ -4,6 +4,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Signals/PlayerSignalComponent.h"
+#include "Director/DirectorComponent.h"
 
 AOnePillCharacter::AOnePillCharacter()
 {
@@ -20,6 +21,7 @@ AOnePillCharacter::AOnePillCharacter()
 	FirstPersonCamera->bUsePawnControlRotation = true;
 
 	PlayerSignals = CreateDefaultSubobject<UPlayerSignalComponent>(TEXT("PlayerSignals"));
+	Director = CreateDefaultSubobject<UDirectorComponent>(TEXT("Director"));
 }
 
 void AOnePillCharacter::BeginPlay()

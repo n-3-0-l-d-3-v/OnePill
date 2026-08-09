@@ -9,6 +9,7 @@ class UCameraComponent;
 class UInputMappingContext;
 class UInputAction;
 class UPlayerSignalComponent;
+class UDirectorComponent;
 
 /**
  * Pre-Pill first-person character: standard walk/look controls. Post-Pill behavior
@@ -43,4 +44,7 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "OnePill|Signals")
 	TObjectPtr<UPlayerSignalComponent> PlayerSignals;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "OnePill|Director")
+	TObjectPtr<UDirectorComponent> Director;
 };
