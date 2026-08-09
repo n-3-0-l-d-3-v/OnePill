@@ -1,0 +1,30 @@
+# Unreal Engine 5
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+.vs/
+.vsconfig
+*.VC.db
+*.opensdf
+*.opendb
+*.sdf
+*.sln
+*.suo
+*.xcodeproj
+*.xcworkspace
+
+# UE5 packaging/build artifacts
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+# Large binary source assets kept out of git history until Git LFS is configured
+*.psd
+*.fbx.orig
